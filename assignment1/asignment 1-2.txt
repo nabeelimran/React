@@ -1,0 +1,4 @@
+﻿Difference between “import Something from 'package' VS import {Something} from 'package' “
+
+The component which is exported as “default” from one file can be imported into another file without using “{}” on its name.
+While other components and modules which are exported without “default” must be imported in other files with “{}” on their name;
