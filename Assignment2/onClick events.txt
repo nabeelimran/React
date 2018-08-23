@@ -1,0 +1,11 @@
+		Difference between different styles of "onClick" event handlers
+
+onClick={this.myFunc} ==>  this will create a new context and class methods are not available. we
+			   can use this if we don't want to use class methods and state.
+
+
+onClick={() => this.myFunc()} ==>  this syntax will create a new callback function every time the 					   event is called. In most cases this is fine but when passed to 					   lower components wil cause a performance issue.
+
+
+onClick={this.myFunc.bind(this)} ==>  we are binding "this" of class with callback function so
+				      methods and state of class are available in callback function
