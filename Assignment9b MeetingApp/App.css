@@ -1,0 +1,158 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.registration{
+  width: 500px;
+  height: 350px;
+  margin: auto;
+  text-align: left;
+  position: relative;
+  background-color: #ececec;
+  padding: 30px 40px;
+  margin-top: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .5);
+}
+/* input[type=text] {
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: 1px solid #999;
+  box-shadow: 0px 0px 0px #000;
+  margin: 5px 0px;
+  font-size: 20px;
+}
+
+input[type=text]:focus {
+  border: 1px solid #009;
+  box-shadow: 0px 0px 6px #000;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 1s;
+} */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select {
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	padding: 0 10px;
+	height: 40px;
+	margin-bottom: 15px;
+	border: 1px solid #CDCDCD;
+	outline: none;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus {
+	border: 1px solid #607799;
+	box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .13);
+}
+
+label{
+  color: #555;
+}
+button.btn-next{
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
+  /* padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #dddddd;
+  background: transparent;
+  color: #808080;
+  cursor: pointer;
+  font-size: 18px; */
+  font-size: 100%;
+  font-weight: 700;
+  width: 90%;
+	display: block;
+	box-sizing: border-box;
+	background-color: #3e49ea;
+	color: #FFF;
+	padding: 10px 0;
+	border: 1px solid #3e49ea;
+	border-radius: 3px;
+	outline: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.btn-next-map{
+  width: 98% !important;
+}
+
+button.btn-next:hover, button.btn-next:focus {
+  /* color: #222;
+  border: 2px solid #979797; */
+  border: 1px solid #3e49ea;
+	background-color: #404799;
+}
+/* button.light {
+  color: #444;
+  border: 2px solid #555;
+}
+button.light:hover {
+  color: #111;
+  border: 2px solid #000;
+} */
+.heading{
+  text-align: center;
+}
+.image-upload > input
+{
+    display: none;
+}
+.image-upload label{
+  cursor: pointer;
+}
+.image-upload label:hover{
+  color: #222;
+}
+.upload-btn{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  margin-bottom: 38px;
+}
+.upload-info{
+  color: #999;
+  font-size: 14px;
+}
+.heading{
+  font-size: 20px;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.avatar{
+  display: inline-flex;
+}

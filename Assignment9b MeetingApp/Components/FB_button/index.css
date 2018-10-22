@@ -1,0 +1,19 @@
+.btn-fb{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a538a;
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
+    border-radius: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 25px;
+    margin-bottom: 8px;
+    padding: 15px;
+    width: 100px;
+    cursor: pointer;
+}
+.btn-fb:hover{
+    background-color: #164675;
+}
