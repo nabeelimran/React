@@ -22,7 +22,7 @@ class App extends Component {
 
     this.state = {
       isLogin:false,
-      step:5,
+      step:1,
     }
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
@@ -36,7 +36,7 @@ class App extends Component {
   login() {
     var user;
     const saveUserData = user => {
-      this.setState({isLogin:true, userName:user.displayName, userEmail:user.email, FBImgURL:user.photoURL, userID:user.uid});
+      this.setState({userName:user.displayName, userEmail:user.email, FBImgURL:user.photoURL, userID:user.uid, isLogin:true});
       console.log("logged in");
     }
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -50,6 +50,7 @@ class App extends Component {
   logout() {
     firebase.auth().signOut().then(() => {
       console.log("Sign-out successful");
+      this.setState({ step:1 });
       this.setState({isLogin:false});
     }).catch(function(error) {
     });
@@ -100,31 +101,33 @@ class App extends Component {
 
 
   render() {
-    const {isLogin, step, FBImgURL} = this.state;
+    const {isLogin, step, FBImgURL, userID} = this.state;
 
-    return (
-      <div className="App">
+    return <div className="App">
         <AppBar>
-          {!isLogin?
-          <FbButton login={this.login} />
-          :
-          <span className='avatar'>
-            <Avatar fbimg={FBImgURL} />
-            <LogoutButton logout={this.logout} />
-          </span>
-          }
+          {!isLogin ? <FbButton login={this.login} />
+           : 
+            <span className="avatar">
+              <Avatar fbimg={FBImgURL} />
+              <LogoutButton logout={this.logout} />
+            </span>}
         </AppBar>
-        {step<4 && <div className="registration">
-          {step===1 && <BasicInfo saveBasicInfo={this.saveBasicInfo} />}
-          {step===2 && <ProfilePics saveProfilePics={this.saveProfilePics} />}
-          {step===3 && <BaveragesAndTime saveBaveragesAndTime={this.saveBaveragesAndTime} />}
-        </div>}
-          {step===4 && <Map saveLocation={this.saveLocation}/> }
-          {step===5 && <Dashboard /> }
-
-      </div>
-    );
+        {/* {!isLogin ?
+          <div className="login-screen">
+            <h1>Please Login/signup to continue</h1>
+          </div> 
+          :
+          <div>
+            {step < 4 && <div className="registration">
+                {step === 1 && <BasicInfo saveBasicInfo={this.saveBasicInfo} />}
+                {step === 2 && <ProfilePics saveProfilePics={this.saveProfilePics} />}
+                {step === 3 && <BaveragesAndTime saveBaveragesAndTime={this.saveBaveragesAndTime} />}
+              </div>}
+            {step === 4 && <Map saveLocation={this.saveLocation} />} */}
+            {isLogin && step === 1 && <Dashboard userID={userID}/>}
+          {/* </div>} */}
+      </div>;
   }
 }
-
+      
 export default App;

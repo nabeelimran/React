@@ -25,7 +25,7 @@ const styles = {
 };
 
 function ImgMediaCard(props) {
-  const { classes } = props;
+  const { classes, name, nickName, images } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea disableTouchRipple = {true}>
@@ -38,13 +38,13 @@ function ImgMediaCard(props) {
           draggable="false"
           title="Contemplative Reptile"
         /> */}
-        <Carousal />
+        <Carousal images={images} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Name
+            {name}
           </Typography>
           <Typography component="p">
-            Nick name
+            {nickName}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -8,11 +8,6 @@ import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft.js';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight.js';
 
-const tutorialSteps = [
-    'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-    'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-    'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
-];
 
 const styles = theme => ({
   root: {
@@ -53,9 +48,9 @@ class TextMobileStepper extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, images } = this.props;
     const { activeStep } = this.state;
-    const maxSteps = tutorialSteps.length;
+    const maxSteps = images.length;
 
     return (
       <div className={classes.root}>
@@ -65,7 +60,7 @@ class TextMobileStepper extends React.Component {
         <img
             draggable="false"
           className={classes.img}
-          src={tutorialSteps[activeStep]}
+          src={images[activeStep]}
           alt="profile pic"
         />
         <MobileStepper

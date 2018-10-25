@@ -26,6 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.login-screen{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+}
 
 .registration{
   width: 500px;
